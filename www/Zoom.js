@@ -1,6 +1,12 @@
-module.exports = function(context) {
+var exec = require('cordova/exec');
+var PLUGIN_NAME = "Zoom";
 
-    var ConfigParser, XmlHelpers;
+function callNativeFunction(name, args, success, error) {
+    args = args || [];
+    success = success || function(){};
+    error = error || function(){};
+    exec(success, error, PLUGIN_NAME, name, args);
+var ConfigParser, XmlHelpers;
     try {
         // cordova-lib >= 5.3.4 doesn't contain ConfigParser and xml-helpers anymore
         ConfigParser = context.requireCordovaModule("cordova-common").ConfigParser;
@@ -14,17 +20,6 @@ module.exports = function(context) {
     var fs = require('fs'),
         path = require('path'),
         et = require('elementtree');
-}
-
-var exec = require('cordova/exec');
-var PLUGIN_NAME = "Zoom";
-
-function callNativeFunction(name, args, success, error) {
-    args = args || [];
-    success = success || function(){};
-    error = error || function(){};
-    exec(success, error, PLUGIN_NAME, name, args);
-
 }
 
 var zoom = {
