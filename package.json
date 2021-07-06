@@ -11,7 +11,8 @@
       "q",
       "fs",
       "path",
-      "elementtree"
+      "elementtree",
+      "require"
     ]
   },
   "keywords": [
