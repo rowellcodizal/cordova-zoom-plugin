@@ -6,6 +6,12 @@
     "id": "cordova.plugin.zoom",
     "platforms": [
       "android"
+    ],
+    "dependencies": [
+      "q",
+      "fs",
+      "path",
+      "elementtree"
     ]
   },
     "dependencies": [
