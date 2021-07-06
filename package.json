@@ -14,13 +14,6 @@
       "elementtree"
     ]
   },
-    "dependencies": [
-      "q",
-      "fs",
-      "path",
-      "elementtree"
-    ]
-  },
   "keywords": [
     "ecosystem:cordova",
     "cordova-android"
