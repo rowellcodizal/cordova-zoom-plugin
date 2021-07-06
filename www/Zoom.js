@@ -6,20 +6,6 @@ function callNativeFunction(name, args, success, error) {
     success = success || function(){};
     error = error || function(){};
     exec(success, error, PLUGIN_NAME, name, args);
-var ConfigParser, XmlHelpers;
-    try {
-        // cordova-lib >= 5.3.4 doesn't contain ConfigParser and xml-helpers anymore
-        ConfigParser = context.requireCordovaModule("cordova-common").ConfigParser;
-        XmlHelpers = context.requireCordovaModule("cordova-common").xmlHelpers;
-    } catch (e) {
-        ConfigParser = context.requireCordovaModule("cordova-lib/src/configparser/ConfigParser");
-        XmlHelpers = context.requireCordovaModule("cordova-lib/src/util/xml-helpers");
-    }
-
-    /** @external */
-    var fs = require('fs'),
-        path = require('path'),
-        et = require('elementtree');
 }
 
 var zoom = {
