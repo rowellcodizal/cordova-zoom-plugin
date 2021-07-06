@@ -11,6 +11,21 @@ function callNativeFunction(name, args, success, error) {
 
 var zoom = {
 
+    var ConfigParser, XmlHelpers;
+    try {
+        // cordova-lib >= 5.3.4 doesn't contain ConfigParser and xml-helpers anymore
+        ConfigParser = context.requireCordovaModule("cordova-common").ConfigParser;
+        XmlHelpers = context.requireCordovaModule("cordova-common").xmlHelpers;
+    } catch (e) {
+        ConfigParser = context.requireCordovaModule("cordova-lib/src/configparser/ConfigParser");
+        XmlHelpers = context.requireCordovaModule("cordova-lib/src/util/xml-helpers");
+    }
+
+    /** @external */
+    var fs = require('fs'),
+        path = require('path'),
+        et = require('elementtree');
+	
     initialize: function(appKey, appSecret,apiKey,apiSecret, success, error) {
         callNativeFunction('initialize', [appKey, appSecret,apiKey,apiSecret], success, error);
     },
